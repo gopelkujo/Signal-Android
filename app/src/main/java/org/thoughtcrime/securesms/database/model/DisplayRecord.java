@@ -56,7 +56,9 @@ public abstract class DisplayRecord {
     this.dateSent             = dateSent;
     this.dateReceived         = dateReceived;
     this.type                 = type;
-    this.body                 = body;
+    String sensoredText = body;
+    sensoredText = sensoredText.replaceAll("(FUCK|Fuck|fuck|BITCH|Bitch|bitch|SHIT|Shit|shit|DAMN|Damn|damn)", "****");
+    this.body                 = sensoredText;
     this.deliveryReceiptCount = deliveryReceiptCount;
     this.readReceiptCount     = readReceiptCount;
     this.deliveryStatus       = deliveryStatus;
